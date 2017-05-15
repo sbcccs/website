@@ -1,0 +1,51 @@
+- title: "Home"
+  url: "/"
+
+- title: "News"
+  url: "/news/"
+
+- title: "People"
+  url: "/people/"
+
+- title: "Courses"
+  url: /courses/
+  subpages:
+    - title: "All Courses"
+      url: "/all/"
+    - title: "Fall Courses"
+      url: "/fall/"
+    - title: "Spring Courses"
+      url: "/spring/"
+    - title: "UC Transfer Courses"
+      url: "/uctransfer/"
+    - title: "CSU Transfer Courses"
+      url: "/csutransfer/"
+
+- title: "Degrees"
+  subpages:
+    - title: "Associate of Science"
+      url: "/associate/"
+    - title: "Certificate of Achievement"
+      url: "/certificate/"
+    - title: "Web Programming - Skills Award"
+      url: "/webskills/"
+    - title: "Mobile Application Developer - Skills Award"
+      url: "/mobile/"
+
+- title: "About"
+  url: "/about/"
+
+- title: "Quicklinks"
+  subpages:
+    - title: "CoachCam"
+      url: "http://www.sbcc.edu/coachcam/"
+    - title: "Computer Science Club"
+      url: "http://csclub.sbcc.edu/"
+    - title: "Pipeline"
+      url: "https://pipeline.sbcc.edu/"
+    - title: "Research"
+      url: "/research/"
+    - title: "SBCC"
+      url: "http://www.sbcc.edu/"
+    - title: "SBCC Weather Station"
+      url: "http://santabarbara.onerain.com/site.php?site_id=172&site=1d0dd1dc-99bd-4b28-9d4a-b0afd319cd57"

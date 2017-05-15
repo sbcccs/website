@@ -1,0 +1,72 @@
+---
+layout: page
+title: People
+permalink: /people/
+active: people
+---
+<h1>Faculty</h1>
+
+<section class="faculty">
+{% assign sorted_people = site.people | sort: 'weight' %}
+{% for people in sorted_people %}
+
+  {% assign loopindex = forloop.index | modulo: 2 %}
+  {% if loopindex == 1 %}
+    <div class="row">
+  {% endif %}
+
+	<div class="col-md-6">
+	  <div class="people-container">
+	    <div class="people-thumb"><img src="{{ people.image_thumb }}" alt="" /></div>
+	    <div class="people-content">
+		<h2 class="people-title">
+		{% if people.page == true %}
+		  <a href="{{ people.url }}">{{ people.title }}</a>
+		{% else %}
+		  {{ people.title }}
+		{% endif %}	  
+		</h2>
+		{% for info in people.short-description %}
+		  <h4>{{ info.title }}</h4>
+		  <h5>{{ info.office }}</h5>
+		  <h5>{{ info.phone }}</h5>
+		  <h5>{{ info.subtitle }}</h5>
+		  <h5>{{ info.email }}</h5>
+		{% endfor %}
+	    </div>
+	  </div>
+	</div>
+
+  {% if loopindex == 0 %}
+    </div>
+  {% endif %}    
+
+{% endfor %}
+</section>
+
+<h1>Lab Teaching Assistants</h1>
+
+<section class="lta">
+<div class="row">
+{% for people in site.lta %}
+  <div class="col-md-6">
+    <div class="lta-container">
+      <div class="people-thumb"><img src="{{ people.image_path }}"/></div>
+      <div class="people-content">
+	<h2 class="people-title">{{ people.title }}</h2>
+	{% for info in people.short-description %}
+	  <h5>{{ info.office }}</h5>
+	  <h5>{{ info.phone }}</h5>
+	  <h5>{{ info.email }}</h5>
+	{% endfor %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+</section>
+
+<h1>CS Students of the Year</h1>
+  <div class="students">
+    <h3><img src="/assets/img/student-of-the-year/award-icon.png">Congratulations to the <a href="/people/students-of-the-year">CS Students of the Year!</a></h3>
+  </div>

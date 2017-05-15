@@ -1,0 +1,35 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: SBCC Computer Science
+email: info@cs.sbcc.edu
+description: >
+  Entering the digital world
+url: "cs.sbcc.edu" # the base hostname & protocol for your site
+# make sure to update the URL before going live!
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+include: ['_pages']
+
+# Gems
+gems: ['jekyll-paginate']
+paginate: 5
+paginate_path: "/news/page:num/"
+
+# Excerpt separator
+excerpt_separator: <!--more-->
+
+# Collections
+collections:
+  people:
+    output: true
+  lta:
+    output: true

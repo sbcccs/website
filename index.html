@@ -1,0 +1,77 @@
+---
+layout: default
+title: Home
+menu: main
+active: home
+header: [DAYS, TIMES]
+dict:
+   - days: Monday through Friday
+     times: "10am - 6:30pm"
+   - days: Saturday and Sunday
+     times: Closed
+---
+
+<div class="home">
+
+    <div class="container">
+	<div class="row">
+	    <div class="box">
+		<div class="col-lg-12">
+		    <hr>
+		    <h2 class="intro-text text-center"><strong>CS Summer '17 Lab Hours</strong></h2>
+		    <hr>
+		    <div class="table-responsive">
+			{% assign cols = page.header %}
+			<table class="table table-bordered table-hover">
+			    <thead class="thead-default"><tr>
+				{% for col in cols %}
+				<th>{{ col }}</th>
+				{% endfor %}
+			    </tr></thead>
+			    <tbody>
+				{% for item in page.dict %}
+				<tr><td>{{ item.days }}</td><td>{{ item.times }}</td></tr>
+				{% endfor %}
+			    </tbody>
+			</table>
+			<p><strong>Note:</strong> CS Lab will be closed for all <a href="http://www.sbcc.edu/calendar/files/ApprovedCalendar1718.pdf">campus holidays</a></p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+
+	<div class="row">
+	    <div class="box">
+		<div class="col-lg-12">
+		    <hr>
+		    <h2 class="intro-text text-center"><strong>Latest News</strong></h2>
+		    <hr>
+		    <ul class="post-list">
+		    {% for post in site.posts limit:1 %}
+			<div id="post-item">
+			    <div id="post-item-header" class="clearfix">
+				<h2><span class="post-link">
+				    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+				</span>
+				<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span></h2>
+			    </div>
+			    <div id="post-meta">{{ post.excerpt }}{% include post_image.html %}</div>
+			</div>
+		    {% endfor %}
+		    {% for post in site.posts offset:1 limit:4 %}
+			<div id="post-item">
+			    <div id="post-item-header" class="clearfix">
+				<h3><span class="post-link">
+				    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+				</span>
+				<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span></h3>
+			    </div>
+			</div>
+		    {% endfor %}
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    </div>
+
+</div>
